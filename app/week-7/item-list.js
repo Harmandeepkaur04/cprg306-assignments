@@ -5,7 +5,7 @@ import Item from "./item";
 
 
 
-export default function ItemList({items}) {
+export default function ItemList({items, onItemSelect}) {
 
   const [sortBy, setSortBy] = useState("name");
 
@@ -31,7 +31,7 @@ export default function ItemList({items}) {
       </section>
     <section className=" p-2 m-4 bg-slate-900 max-w-sm">
       {sortedItems.map((item) => (
-        <Item key={item.id} item={item} />
+        <Item key={item.id} item={item} onSelect={onItemSelect} />
       ))}
     </section>
    
