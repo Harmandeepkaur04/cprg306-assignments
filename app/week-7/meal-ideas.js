@@ -24,9 +24,9 @@ export default function MealIdeas({ingredient}){
       }, [ingredient]);
     
       return (
-        <div>
-          <h2>Meal Ideas for {ingredient}</h2>
-          <ul>
+        <div class="flex-1 max-w-sm m-2 p-2 bg-pink-700">
+          <h2 className="text-xl font-bold">Meal Ideas for {ingredient}</h2>
+          <ul class="p-2 m-1 bg-slate-900 max-w-sm hover:bg-pink-700 cursor-pointer">
             {meals ? (
               meals.map((meal) => (
                 <li key={meal.idMeal}>
@@ -35,7 +35,7 @@ export default function MealIdeas({ingredient}){
                 </li>
               ))
             ) : (
-              <p>No meal ideas found</p>
+              <p class="  text-xl font-bold">No meal ideas found</p>
             )}
           </ul>
         </div>

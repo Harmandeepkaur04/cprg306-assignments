@@ -24,12 +24,17 @@ export default function page(){
     return(
       
         <main>
-          <h1 className="text-3xl font-bold m-2" >Shopping List</h1>
-          <NewItem onHandleAddItem={handleAddItem} />
-          <ItemList items ={items} onItemSelect={handleItemSelect}/>
-          <div className="w-4">
-          {selectedItemName && <MealIdeas ingredient={selectedItemName}/>
+          
+            <h1 className="text-3xl font-bold m-2" >Shopping List</h1>
+            <div class="flex">
+            <div class="flex-1 max-w-sm m-2">
+           <NewItem onHandleAddItem={handleAddItem} />
+           <ItemList items ={items} onItemSelect={handleItemSelect}/>
+          </div>
+          <div    className="flex-1 max-w-sm m-2 p-2 ">
+           {selectedItemName && <MealIdeas ingredient={selectedItemName}/>
           }
+          </div>
           </div>
       </main>
     );
